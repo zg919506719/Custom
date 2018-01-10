@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:animationOrder="normal" android:animation="@anim/layout">
+<!--LayoutAnimationsController可以用于实现使多个控件按顺序一个一个的显示。
+1)LayoutAnimationsController用于为一个layout里面的控件，或者是一个ViewGroup里面的控件设置统一的动画效果。
+android:animationOrder - 动画执行的循序(normal：顺序，random：随机，reverse：反向显示)
+ 放在listView的layoutAnmation中i，可以设置里面每个item的显示动画-->
+</layoutAnimation>

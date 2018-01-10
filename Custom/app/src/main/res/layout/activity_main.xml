@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="旋转着消失"
-        android:textSize="50sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tv1"
@@ -19,19 +19,25 @@
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:text="移动着收缩"
-        android:textSize="50sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="移动缩放着旋转消失"
-        android:textSize="50sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@anim/frame"
-        android:textSize="50sp" />
+        android:background="@drawable/frame"
+        android:textSize="30sp" />
+<Button
+    android:id="@+id/btn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="next"/>
+
 </LinearLayout>
