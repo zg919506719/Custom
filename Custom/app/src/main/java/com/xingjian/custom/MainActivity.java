@@ -1,5 +1,7 @@
 package com.xingjian.custom;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final TextView tv = (TextView) findViewById(R.id.tv);
+//        1.Tweened Animations：该类Animations提供了旋转、移动、伸展和淡出等效果。Alpha——淡入淡出，Scale——缩放效果，Rotate——旋转，Translate——移动效果。
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,11 +91,17 @@ public class MainActivity extends AppCompatActivity {
                 tv2.startAnimation(animation);
             }
         });
-        TextView tv3 = (TextView) findViewById(R.id.tv3);
+        final TextView tv3 = (TextView) findViewById(R.id.tv3);
         tv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//移动
+//        2.Frame-by-frame Animations
+                AnimationDrawable background = (AnimationDrawable) tv3.getBackground();
+                if (background.isRunning()) {
+                    background.stop();
+                } else {
+                    background.start();
+                }
             }
         });
     }

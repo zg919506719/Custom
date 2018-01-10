@@ -32,7 +32,6 @@
         android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="移动"
-
+        android:background="@anim/frame"
         android:textSize="50sp" />
 </LinearLayout>
