@@ -10,27 +10,29 @@
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:text="旋转着消失" />
+        android:text="旋转着消失"
+        android:textSize="50sp" />
+
     <TextView
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
         android:background="@color/colorAccent"
-        android:text="移动着收缩" />
+        android:text="移动着收缩"
+        android:textSize="50sp" />
+
     <TextView
         android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
+        android:text="移动缩放着旋转消失"
+        android:textSize="50sp" />
 
-        android:text="缩放" />
     <TextView
         android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
+        android:text="移动"
 
-        android:text="移动"/>
+        android:textSize="50sp" />
 </LinearLayout>

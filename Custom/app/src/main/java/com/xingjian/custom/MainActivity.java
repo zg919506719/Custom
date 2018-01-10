@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
@@ -76,11 +77,14 @@ public class MainActivity extends AppCompatActivity {
 //                tv1.setTextScaleX(0.5f);
             }
         });
-        TextView tv2 = (TextView) findViewById(R.id.tv2);
+        final TextView tv2 = (TextView) findViewById(R.id.tv2);
         tv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//缩放
+//移动缩放着旋转消失，draw文件
+                //如果分开的set没有设置时间，将执行每个动画的时间
+                Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.test_all);
+                tv2.startAnimation(animation);
             }
         });
         TextView tv3 = (TextView) findViewById(R.id.tv3);
