@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //页面之间的跳转动画
                 startActivity(new Intent(MainActivity.this, ViewActivity.class));
-                overridePendingTransition(R.anim.test_all,android.R.anim.slide_out_right);
+                overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
             }
         });
     }
