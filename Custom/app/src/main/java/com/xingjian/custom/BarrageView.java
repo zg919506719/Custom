@@ -10,7 +10,6 @@ import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -39,6 +38,13 @@ public class BarrageView extends View {
         init();
     }
 
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        mDanmuViewWidth = w;
+        mDanmuViewHeight = h;
+    }
+
     String TAG = "haha";
 
     @Override
@@ -46,6 +52,7 @@ public class BarrageView extends View {
         super.onDraw(canvas);
         if (mDanmuViewWidth > 0 && mDanmuViewHeight > 0) {
             for (TextItem item : textItems) {
+                Log.i(TAG, "onDraw: "+item.getmLocY());
                 canvas.drawText(item.getContent(), item.getmLocX(), item.getmLocY(), textPaint);
             }
         }
@@ -54,9 +61,8 @@ public class BarrageView extends View {
     private void init() {
         textPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         textPaint.setColor(Color.RED);
-        textPaint.setTextSize(30);
+        textPaint.setTextSize(50);
         textItems = new ArrayList<>();
-        addTextItem("hahahaha");
         handler.postDelayed(r, 1000);
     }
 
@@ -76,19 +82,13 @@ public class BarrageView extends View {
             for (TextItem textItem : textItems) {
                 textItem.moveToLeft();
             }
+            addTextItem("haha");
             postInvalidate();
             handler.postDelayed(r, 1000);
         }
     };
     private Handler handler = new Handler();
 
-
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
-        mDanmuViewWidth = w;
-        mDanmuViewHeight = h;
-    }
 
     public class TextItem {
         private float mLocX;

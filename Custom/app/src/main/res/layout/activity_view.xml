@@ -13,10 +13,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:text="haha"
+            <com.xingjian.custom.BallView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="200dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.xingjian.custom.BarrageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="haha1" />
         </LinearLayout>
 
         <LinearLayout
@@ -24,27 +33,19 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:text="haha1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:text="haha2" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:text="haha2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:text="haha3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:text="haha3" />
         </LinearLayout>
     </ViewFlipper>
 
