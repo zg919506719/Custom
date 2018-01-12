@@ -1,54 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:test="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/flipper"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <ViewFlipper
-        android:id="@+id/flipper"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <com.xingjian.custom.BallView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="200dp" />
+    </LinearLayout>
 
-            <com.xingjian.custom.BallView
-                android:layout_width="match_parent"
-                android:layout_height="200dp" />
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <com.xingjian.custom.BarrageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:text="haha1" />
+    </LinearLayout>
 
-            <com.xingjian.custom.BarrageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="haha1" />
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <com.xingjian.custom.XmlView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            test:titleText="这是测试的文本"
+            test:titleTextColor="@color/colorAccent" />
+    </LinearLayout>
 
-            <com.xingjian.custom.XmlView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                test:titleText="这是测试的文本"
-                test:titleTextColor="@color/colorAccent"/>
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="haha3" />
-        </LinearLayout>
-    </ViewFlipper>
-
-</LinearLayout>
+            android:layout_height="match_parent"
+            android:text="haha3" />
+    </LinearLayout>
+</ViewFlipper>

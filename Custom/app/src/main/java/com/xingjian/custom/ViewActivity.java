@@ -18,6 +18,7 @@ public class ViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //创建的时候，外面就已经存在framelayout
         setContentView(R.layout.activity_view);
         viewFlipper = (ViewFlipper) findViewById(R.id.flipper);
         viewFlipper.setOnTouchListener(touchListener);

@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 
 /**
  * Created by thinkpad on 2018/1/12.
@@ -77,7 +78,6 @@ public class XmlView extends View {
             textPaint.getTextBounds(content, 0, content.length(), mBound);
             height = (int) (getPaddingLeft() + mBound.height() + getPaddingRight());
         }
-
         setMeasuredDimension(width, height);
     }
 
@@ -87,5 +87,10 @@ public class XmlView extends View {
         canvas.drawRect(0, 0, getMeasuredWidth(), getMeasuredHeight(), textPaint);
         textPaint.setColor(contentColor);
         canvas.drawText(content, getWidth() / 2 - mBound.width() / 2, getHeight() / 2 - mBound.height() / 2, textPaint);
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
     }
 }
