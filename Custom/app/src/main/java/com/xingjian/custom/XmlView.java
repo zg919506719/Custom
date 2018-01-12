@@ -25,7 +25,7 @@ public class XmlView extends View {
     }
 
     public XmlView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public XmlView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -35,7 +35,7 @@ public class XmlView extends View {
         TypedArray array = context.getTheme().obtainStyledAttributes(attrs, R.styleable.XmlView, defStyleAttr, 0);
         for (int i = 0; i < array.getIndexCount(); i++) {
             int attr = array.getIndex(i);
-            switch (attr){
+            switch (attr) {
                 case R.styleable.XmlView_titleText:
                     content = array.getString(attr);
                     break;
@@ -49,14 +49,43 @@ public class XmlView extends View {
         textPaint = new TextPaint();
         mBound = new Rect();
         textPaint.setTextSize(80);
-        textPaint.getTextBounds(content,0,content.length(),mBound);
+        textPaint.getTextBounds(content, 0, content.length(), mBound);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+//        EXACTLY：一般是设置了明确的值或者是MATCH_PARENT
+//        AT_MOST：表示子布局限制在一个最大值内，一般为WARP_CONTENT
+//        UNSPECIFIED：表示子布局想要多大就多大，很少使用
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+        int width = 0;
+        int height = 0;
+        if (widthMode == MeasureSpec.EXACTLY) {
+            width = widthSize;
+        } else {
+            textPaint.getTextBounds(content, 0, content.length(), mBound);
+            width = (int) (getPaddingLeft() + mBound.width() + getPaddingRight());
+        }
+
+        if (heightMode == MeasureSpec.EXACTLY) {
+            height = heightSize;
+        } else {
+            textPaint.getTextBounds(content, 0, content.length(), mBound);
+            height = (int) (getPaddingLeft() + mBound.height() + getPaddingRight());
+        }
+
+        setMeasuredDimension(width, height);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawRect(0,0,getMeasuredWidth(),getMeasuredHeight(),textPaint);
+        canvas.drawRect(0, 0, getMeasuredWidth(), getMeasuredHeight(), textPaint);
         textPaint.setColor(contentColor);
-        canvas.drawText(content,getWidth()/2-mBound.width()/2,getHeight()/2-mBound.height()/2,textPaint);
+        canvas.drawText(content, getWidth() / 2 - mBound.width() / 2, getHeight() / 2 - mBound.height() / 2, textPaint);
     }
 }
