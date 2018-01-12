@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:test="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -32,10 +33,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
+            <com.xingjian.custom.XmlView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="haha2" />
+                test:titleText="这是测试的文本"
+                test:titleTextColor="@color/colorAccent"/>
         </LinearLayout>
 
         <LinearLayout

@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
+ * 弹幕
  * Created by thinkpad on 2018/1/11.
  */
 

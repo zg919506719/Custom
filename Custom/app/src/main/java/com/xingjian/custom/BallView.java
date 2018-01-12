@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
+ * 拖动小球
  * Created by thinkpad on 2018/1/11.
  */
 
