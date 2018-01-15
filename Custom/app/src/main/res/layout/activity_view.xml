@@ -40,9 +40,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <com.xingjian.custom.TearView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="haha3" />
+            android:layout_height="300dp" />
     </LinearLayout>
 </ViewFlipper>
