@@ -7,7 +7,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 /**
@@ -45,6 +48,13 @@ public class ViewActivity extends AppCompatActivity {
                 objectAnimator.start();
             }
         });
+
+        //
+        ListView listView = (ListView) findViewById(R.id.lv_show);
+        TextView textView = (TextView) findViewById(R.id.tv_count);
+        //获取最顶层的viewgroup
+        ViewGroup viewGroup = (ViewGroup) getWindow().getDecorView();
+        listView.setAdapter(new BasselAdapter(textView,ViewActivity.this,viewGroup));
     }
 
     View.OnTouchListener touchListener = new View.OnTouchListener() {
