@@ -1,10 +1,13 @@
 package com.xingjian.custom;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ViewFlipper;
 
 /**
@@ -14,6 +17,7 @@ import android.widget.ViewFlipper;
 public class ViewActivity extends AppCompatActivity {
 
     private ViewFlipper viewFlipper;
+    private Button btn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -22,6 +26,25 @@ public class ViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view);
         viewFlipper = (ViewFlipper) findViewById(R.id.flipper);
         viewFlipper.setOnTouchListener(touchListener);
+        btn = (Button)findViewById(R.id.btn_count);
+        //数字增长动画
+        final TestBean bean = new TestBean();
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ObjectAnimator objectAnimator = ObjectAnimator.ofInt(bean, "age", 1, 100);
+                objectAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        int value = (int) valueAnimator.getAnimatedValue();
+                        bean.setAge(value);
+                        btn.setText(bean.toString());
+                    }
+                });
+                objectAnimator.setDuration(5000);
+                objectAnimator.start();
+            }
+        });
     }
 
     View.OnTouchListener touchListener = new View.OnTouchListener() {
