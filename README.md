@@ -28,3 +28,5 @@ ProGuard相信大家都不会陌生，很多人都会使用这个工具来混淆
 
 viewstub需要的时候才进行加载布局http://blog.csdn.net/guolin_blog/article/details/43376527
 所加载的布局是不可以使用<merge>标签的，因此这有可能导致加载出来的布局存在着多余的嵌套结构
+
+#<a href="https://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434039&amp;idx=1&amp;sn=32ea2abdb5ebfd95e64199cf2050eb36&amp;chksm=f128854cc65f0c5a02f2ee310f4dd1bcf75616bc871c7a5714184398b43870a88d06041091ce&amp;scene=0#wechat_redirect"/>android混淆
