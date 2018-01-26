@@ -18,7 +18,6 @@ import android.widget.ViewFlipper;
  */
 
 public class ViewActivity extends AppCompatActivity {
-
     private ViewFlipper viewFlipper;
     private Button btn;
 
@@ -48,8 +47,6 @@ public class ViewActivity extends AppCompatActivity {
                 objectAnimator.start();
             }
         });
-
-        //
         ListView listView = (ListView) findViewById(R.id.lv_show);
         TextView textView = (TextView) findViewById(R.id.tv_count);
         //获取最顶层的viewgroup
