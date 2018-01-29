@@ -33,3 +33,5 @@ ProGuard相信大家都不会陌生，很多人都会使用这个工具来混淆
 
 #<a href="http://blog.csdn.net/guolin_blog/article/details/50727753">drawable文件夹中，将对应手机的dpi适配好</a>
 出现别的分辨率时候会先查找高分辨率的图片，找不到后找到低分辨率后会进行放大，容易造成OOM
+
+<a href="http://blog.csdn.net/guolin_blog/article/details/49738023">反编译</a>
