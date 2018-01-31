@@ -1,13 +1,9 @@
 package com.xingjian.custom;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Display;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
@@ -25,7 +21,7 @@ public class ScrollClashActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
         ViewGroup.LayoutParams layoutParams = listView.getLayoutParams();
         final Display display = getWindowManager().getDefaultDisplay();
-        layoutParams.height = display.getHeight()/2;
+        layoutParams.height = display.getHeight() / 2;
         listView.setLayoutParams(layoutParams);
 
     }

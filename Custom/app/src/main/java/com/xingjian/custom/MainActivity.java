@@ -1,9 +1,7 @@
 package com.xingjian.custom;
 
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,8 +13,6 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -114,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //页面之间的跳转动画
                 startActivity(new Intent(MainActivity.this, ViewActivity.class));
-                overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
         Button btn1 = (Button) findViewById(R.id.btn1);

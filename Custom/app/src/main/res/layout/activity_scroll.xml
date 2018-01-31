@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/lv_clash"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" />
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/lv_clash"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical" />
+
+    <com.xingjian.custom.MyViewpage
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="测试翻页1" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="测试翻页2" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="测试翻页3" />
+    </com.xingjian.custom.MyViewpage>
+</LinearLayout>
