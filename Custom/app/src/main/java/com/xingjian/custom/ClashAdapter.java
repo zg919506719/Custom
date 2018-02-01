@@ -20,7 +20,7 @@ public class ClashAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 5;
+        return 55;
     }
 
     @Override
