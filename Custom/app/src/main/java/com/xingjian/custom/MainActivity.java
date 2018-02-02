@@ -1,5 +1,9 @@
 package com.xingjian.custom;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -125,6 +129,32 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, WebActivity.class));
+            }
+        });
+        //属性动画 http://blog.csdn.net/lmj623565791/article/details/38067475
+        //LayoutTransition布局动画 http://blog.csdn.net/lmj623565791/article/details/38092093
+        final TextView tv4 = (TextView) findViewById(R.id.tv4);
+        tv4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ValueAnimator animator = ValueAnimator.ofFloat(0, 200f);
+                animator.setTarget(tv4);
+                animator.setDuration(10000).start();
+                animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        tv4.setTranslationX((Float) valueAnimator.getAnimatedValue());
+                    }
+                });
+            }
+        });
+        final TextView tv5 = (TextView) findViewById(R.id.tv5);
+        tv5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Animator anim = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.test_animator);
+                anim.setTarget(tv5);
+                anim.start();
             }
         });
     }
