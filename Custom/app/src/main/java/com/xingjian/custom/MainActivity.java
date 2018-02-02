@@ -137,13 +137,21 @@ public class MainActivity extends AppCompatActivity {
         tv4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ValueAnimator animator = ValueAnimator.ofFloat(0, 200f);
+                final ValueAnimator animator = ValueAnimator.ofFloat(0, 200f);
                 animator.setTarget(tv4);
                 animator.setDuration(10000).start();
                 animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                     @Override
                     public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        tv4.setTranslationX((Float) valueAnimator.getAnimatedValue());
+                        tv4.setTranslationY((Float) valueAnimator.getAnimatedValue());
+                    }
+                });
+                animator.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        //将view放在最外层，5.0后添加了Z轴
+                        tv4.bringToFront();
                     }
                 });
             }
