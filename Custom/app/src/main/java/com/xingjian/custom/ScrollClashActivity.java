@@ -6,9 +6,11 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Display;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -22,7 +24,7 @@ public class ScrollClashActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scroll);
-        final ListView listView = (ListView) findViewById(R.id.lv_clash);
+        final ClashListview listView = (ClashListview) findViewById(R.id.lv_clash);
         ClashAdapter adapter = new ClashAdapter(this);
         listView.setAdapter(adapter);
         ViewGroup.LayoutParams layoutParams = listView.getLayoutParams();
@@ -72,9 +74,11 @@ public class ScrollClashActivity extends AppCompatActivity {
         MyScrollView scrollView = (MyScrollView) findViewById(R.id.scroll);
         scrollView.setListener(new MyScrollView.Listener() {
             @Override
-            public void dealScrool(int getScroll) {
-                Log.i("haha", "dealScrool: " + getScroll);
+            public void dealScrool(int l, int t, int oldl, int oldt) {
+                Log.i("haha", "dealScrool: " + l + "," + t + "," + oldl + "," + oldt + ",");
             }
+
+
         });
     }
 }

@@ -25,7 +25,7 @@ public class MyScrollView extends ScrollView {
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
         if (listener != null) {
-            listener.dealScrool(t - oldt);
+            listener.dealScrool(l, t, oldl, oldt);
         }
     }
 
@@ -36,6 +36,6 @@ public class MyScrollView extends ScrollView {
     }
 
     interface Listener {
-        void dealScrool(int getScroll);
+        void dealScrool(int l, int t, int oldl, int oldt);
     }
 }
