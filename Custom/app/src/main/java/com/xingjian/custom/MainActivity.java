@@ -131,6 +131,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, WebActivity.class));
             }
         });
+        Button btn3 = (Button) findViewById(R.id.btn3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, WindowActivity.class));
+            }
+        });
         //属性动画 http://blog.csdn.net/lmj623565791/article/details/38067475
         //LayoutTransition布局动画 http://blog.csdn.net/lmj623565791/article/details/38092093
         final TextView tv4 = (TextView) findViewById(R.id.tv4);
