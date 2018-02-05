@@ -11,6 +11,7 @@ import android.content.ServiceConnection;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
@@ -33,14 +34,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
         initService();
-//        initHandle();
+        initHandle();
     }
-        private Messenger handleMessagen;
+
+    private Messenger handleMessagen;
     private ServiceConnection handleConn = new ServiceConnection() {
 
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             handleMessagen = new Messenger(iBinder);
+            try {
+                Message message = new Message();
+                message.what = 1;
+                handleMessagen.send(message);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override
@@ -48,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
     private void initHandle() {
         Intent intent = new Intent(MainActivity.this, HandleService.class);
         bindService(intent, handleConn, Context.BIND_AUTO_CREATE);
