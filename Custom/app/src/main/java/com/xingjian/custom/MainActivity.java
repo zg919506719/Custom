@@ -11,6 +11,7 @@ import android.content.ServiceConnection;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.Messenger;
 import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -32,6 +33,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
         initService();
+//        initHandle();
+    }
+        private Messenger handleMessagen;
+    private ServiceConnection handleConn = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            handleMessagen = new Messenger(iBinder);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+
+        }
+    };
+    private void initHandle() {
+        Intent intent = new Intent(MainActivity.this, HandleService.class);
+        bindService(intent, handleConn, Context.BIND_AUTO_CREATE);
     }
 
     private IMusic iMusic;
@@ -49,7 +68,10 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void initService() {
-        Intent intent = new Intent(MainActivity.this, MusicService.class);
+//        Intent intent = new Intent(MainActivity.this, MusicService.class);
+        Intent intent = new Intent();
+        intent.setPackage("com.xingjian.custom");
+        intent.setAction("com.service.custom");
         bindService(intent, conn, Context.BIND_AUTO_CREATE);
         Button btn_start = (Button) findViewById(R.id.btn_start);
         btn_start.setOnClickListener(new View.OnClickListener() {
