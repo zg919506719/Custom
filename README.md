@@ -31,6 +31,8 @@ ProGuard相信大家都不会陌生，很多人都会使用这个工具来混淆
 
 #<a href="https://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434039&amp;idx=1&amp;sn=32ea2abdb5ebfd95e64199cf2050eb36&amp;chksm=f128854cc65f0c5a02f2ee310f4dd1bcf75616bc871c7a5714184398b43870a88d06041091ce&amp;scene=0#wechat_redirect">android混淆</a>
 
+#<a href="http://blog.csdn.net/qidingquan/article/details/53714603">android px,dp转换，屏幕适配</a>
+
 #<a href="http://blog.csdn.net/guolin_blog/article/details/50727753">drawable文件夹中，将对应手机的dpi适配好</a>
 出现别的分辨率时候会先查找高分辨率的图片，找不到后找到低分辨率后会进行放大，容易造成OOM
 
