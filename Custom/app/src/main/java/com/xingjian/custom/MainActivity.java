@@ -26,6 +26,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.xingjian.custom.obsessive.zbar.CaptureActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -164,8 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 //参数5～6：y轴的开始位置
                 //参数7～8：y轴的结束位置
                 //ABSOLUT绝对坐标、RELATIVE_TO_SELF相对于自身坐标、RELATIVE_TO_PARENT相对于父控件的坐标
-                TranslateAnimation translateAnimation = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, 0f,
-                        Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, 1f);
+                TranslateAnimation translateAnimation = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, 1f);
                 animationSet.addAnimation(translateAnimation);
                 animationSet.setDuration(4000);
                 tv1.startAnimation(animationSet);
@@ -258,6 +259,13 @@ public class MainActivity extends AppCompatActivity {
                 Animator anim = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.test_animator);
                 anim.setTarget(tv5);
                 anim.start();
+            }
+        });
+        Button btn_scan = (Button) findViewById(R.id.btn_scan);
+        btn_scan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CaptureActivity.class));
             }
         });
     }
