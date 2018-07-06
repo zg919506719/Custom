@@ -41,6 +41,3 @@ ProGuard相信大家都不会陌生，很多人都会使用这个工具来混淆
 
 <a href="http://blog.csdn.net/limonzet/article/details/53328315">MVP架构</a>
 model层处理数据，present获取model层处理完的数据，然后处理view成的方法，activity实现view层接口并实例化present，并调用方法
-
-<a href="http://www.cnblogs.com/flyinggod/p/8708962.html">Zxing</a>
-zbar扫码速度比较快，但是当图片不是正常角度时候扫描不出，zxing扫描速度慢，但任何角度都能够扫出

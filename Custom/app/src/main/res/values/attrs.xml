@@ -7,4 +7,9 @@
         <attr name="titleText"/>
         <attr name="titleTextColor"/>
     </declare-styleable>
+    <declare-styleable name="ScanView">
+        <attr name="maskColor" format="color"/>  <!-- 预览遮罩颜色 -->
+        <attr name="angleColor" format="color"/> <!-- 扫描框四角的颜色 -->
+        <attr name="slideIcon" format="reference"></attr> <!-- 扫描框中间移动的图 -->
+    </declare-styleable>
 </resources>

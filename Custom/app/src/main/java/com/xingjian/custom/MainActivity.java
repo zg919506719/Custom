@@ -26,7 +26,9 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.luying.ui.Capture1Activity;
 import com.xingjian.custom.obsessive.zbar.CaptureActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -266,6 +268,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, CaptureActivity.class));
+            }
+        });
+        Button btn_scan1 = (Button) findViewById(R.id.btn_scan1);
+        btn_scan1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Capture1Activity.class));
             }
         });
     }

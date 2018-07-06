@@ -94,6 +94,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="扫描" />
+        <Button
+            android:id="@+id/btn_scan1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="扫描1" />
     </LinearLayout>
 
 </ScrollView>
