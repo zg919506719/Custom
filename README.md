@@ -90,3 +90,21 @@ android3.0之前必须调用recycle()，3.0之前bitmap数据存放在c堆中，
 　　静态变量属于全局变量,不会被GC回收,它们会一直占用内存。  
 　　(7)分散对象创建或删除的时间  
 
+# Frame动画
+http://blog.csdn.net/feng88724/article/details/6320507
+# Tween动画
+http://blog.csdn.net/feng88724/article/details/6318430
+
+# 隐藏桌面图标
+apk安装后不显示图标会造成应用无法启动。
+设置方式：
+1.打开Activity的配置，在Intent处增加
+ <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+               	<data android:host="类名" android:scheme="当前应用包名"/>
+            </intent-filter>
+2.在Activity标签中增加android:excludeFromRecents="true" android:theme="@android:style/Theme.NoDisplay" 
+
+以上两步即可实现应用程序不创建桌面图标。
+
